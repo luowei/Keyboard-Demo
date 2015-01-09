@@ -16,6 +16,7 @@
 		EA4E8E961A5F7073007B479F /* Constraint_demoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4E8E951A5F7073007B479F /* Constraint_demoTests.m */; };
 		EA4E8EA91A5F7095007B479F /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4E8EA81A5F7095007B479F /* KeyboardViewController.m */; };
 		EA4E8EAC1A5F7095007B479F /* Constraint-Keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EA4E8EA31A5F7095007B479F /* Constraint-Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EA4E8EB31A5F77B0007B479F /* FullKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4E8EB21A5F77B0007B479F /* FullKeyboard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		EA4E8EA61A5F7095007B479F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA4E8EA71A5F7095007B479F /* KeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
 		EA4E8EA81A5F7095007B479F /* KeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
+		EA4E8EB11A5F77B0007B479F /* FullKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullKeyboard.h; sourceTree = "<group>"; };
+		EA4E8EB21A5F77B0007B479F /* FullKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullKeyboard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,8 @@
 			children = (
 				EA4E8EA71A5F7095007B479F /* KeyboardViewController.h */,
 				EA4E8EA81A5F7095007B479F /* KeyboardViewController.m */,
+				EA4E8EB11A5F77B0007B479F /* FullKeyboard.h */,
+				EA4E8EB21A5F77B0007B479F /* FullKeyboard.m */,
 				EA4E8EA51A5F7095007B479F /* Supporting Files */,
 			);
 			path = "Constraint-Keyboard";
@@ -322,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA4E8EA91A5F7095007B479F /* KeyboardViewController.m in Sources */,
+				EA4E8EB31A5F77B0007B479F /* FullKeyboard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +541,7 @@
 				EA4E8E9B1A5F7073007B479F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA4E8E9C1A5F7073007B479F /* Build configuration list for PBXNativeTarget "Constraint-demoTests" */ = {
 			isa = XCConfigurationList;
@@ -543,6 +550,7 @@
 				EA4E8E9E1A5F7073007B479F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA4E8EAD1A5F7095007B479F /* Build configuration list for PBXNativeTarget "Constraint-Keyboard" */ = {
 			isa = XCConfigurationList;
@@ -551,6 +559,7 @@
 				EA4E8EAF1A5F7095007B479F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
