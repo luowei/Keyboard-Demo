@@ -17,6 +17,14 @@
 		EA4E8EA91A5F7095007B479F /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4E8EA81A5F7095007B479F /* KeyboardViewController.m */; };
 		EA4E8EAC1A5F7095007B479F /* Constraint-Keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EA4E8EA31A5F7095007B479F /* Constraint-Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EA4E8EB31A5F77B0007B479F /* FullKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4E8EB21A5F77B0007B479F /* FullKeyboard.m */; };
+		EA8CE8861A67873C00984034 /* SymbolKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8CE8851A67873C00984034 /* SymbolKeyboard.xib */; };
+		EA8CE8891A6788C900984034 /* KeyBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CE8881A6788C900984034 /* KeyBtn.m */; };
+		EA8CE88E1A67937800984034 /* NineKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CE88D1A67937800984034 /* NineKeyboard.m */; };
+		EA8CE8911A6793F000984034 /* NumKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CE8901A6793F000984034 /* NumKeyboard.m */; };
+		EA8CE8931A67940A00984034 /* NumKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8CE8921A67940A00984034 /* NumKeyboard.xib */; };
+		EA8CE8951A67941800984034 /* NineKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8CE8941A67941800984034 /* NineKeyboard.xib */; };
+		EA8CE8971A67952200984034 /* FullKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA8CE8961A67952200984034 /* FullKeyboard.xib */; };
+		EA8CE89A1A67955D00984034 /* SymbolKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = EA8CE8991A67955D00984034 /* SymbolKeyboard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +78,18 @@
 		EA4E8EA81A5F7095007B479F /* KeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
 		EA4E8EB11A5F77B0007B479F /* FullKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullKeyboard.h; sourceTree = "<group>"; };
 		EA4E8EB21A5F77B0007B479F /* FullKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullKeyboard.m; sourceTree = "<group>"; };
+		EA8CE8851A67873C00984034 /* SymbolKeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SymbolKeyboard.xib; sourceTree = "<group>"; };
+		EA8CE8871A6788C900984034 /* KeyBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyBtn.h; sourceTree = "<group>"; };
+		EA8CE8881A6788C900984034 /* KeyBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyBtn.m; sourceTree = "<group>"; };
+		EA8CE88C1A67937800984034 /* NineKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NineKeyboard.h; sourceTree = "<group>"; };
+		EA8CE88D1A67937800984034 /* NineKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NineKeyboard.m; sourceTree = "<group>"; };
+		EA8CE88F1A6793F000984034 /* NumKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumKeyboard.h; sourceTree = "<group>"; };
+		EA8CE8901A6793F000984034 /* NumKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumKeyboard.m; sourceTree = "<group>"; };
+		EA8CE8921A67940A00984034 /* NumKeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NumKeyboard.xib; sourceTree = "<group>"; };
+		EA8CE8941A67941800984034 /* NineKeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NineKeyboard.xib; sourceTree = "<group>"; };
+		EA8CE8961A67952200984034 /* FullKeyboard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FullKeyboard.xib; sourceTree = "<group>"; };
+		EA8CE8981A67955D00984034 /* SymbolKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SymbolKeyboard.h; sourceTree = "<group>"; };
+		EA8CE8991A67955D00984034 /* SymbolKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SymbolKeyboard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,10 +181,10 @@
 		EA4E8EA41A5F7095007B479F /* Constraint-Keyboard */ = {
 			isa = PBXGroup;
 			children = (
+				EA8CE88B1A67931C00984034 /* CustomView */,
+				EA8CE88A1A67930C00984034 /* Keyboard */,
 				EA4E8EA71A5F7095007B479F /* KeyboardViewController.h */,
 				EA4E8EA81A5F7095007B479F /* KeyboardViewController.m */,
-				EA4E8EB11A5F77B0007B479F /* FullKeyboard.h */,
-				EA4E8EB21A5F77B0007B479F /* FullKeyboard.m */,
 				EA4E8EA51A5F7095007B479F /* Supporting Files */,
 			);
 			path = "Constraint-Keyboard";
@@ -176,6 +196,34 @@
 				EA4E8EA61A5F7095007B479F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA8CE88A1A67930C00984034 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				EA4E8EB11A5F77B0007B479F /* FullKeyboard.h */,
+				EA4E8EB21A5F77B0007B479F /* FullKeyboard.m */,
+				EA8CE8961A67952200984034 /* FullKeyboard.xib */,
+				EA8CE88C1A67937800984034 /* NineKeyboard.h */,
+				EA8CE88D1A67937800984034 /* NineKeyboard.m */,
+				EA8CE8941A67941800984034 /* NineKeyboard.xib */,
+				EA8CE88F1A6793F000984034 /* NumKeyboard.h */,
+				EA8CE8901A6793F000984034 /* NumKeyboard.m */,
+				EA8CE8921A67940A00984034 /* NumKeyboard.xib */,
+				EA8CE8981A67955D00984034 /* SymbolKeyboard.h */,
+				EA8CE8991A67955D00984034 /* SymbolKeyboard.m */,
+				EA8CE8851A67873C00984034 /* SymbolKeyboard.xib */,
+			);
+			name = Keyboard;
+			sourceTree = "<group>";
+		};
+		EA8CE88B1A67931C00984034 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				EA8CE8871A6788C900984034 /* KeyBtn.h */,
+				EA8CE8881A6788C900984034 /* KeyBtn.m */,
+			);
+			name = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +346,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA8CE8951A67941800984034 /* NineKeyboard.xib in Resources */,
+				EA8CE8971A67952200984034 /* FullKeyboard.xib in Resources */,
+				EA8CE8861A67873C00984034 /* SymbolKeyboard.xib in Resources */,
+				EA8CE8931A67940A00984034 /* NumKeyboard.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,8 +378,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA8CE8911A6793F000984034 /* NumKeyboard.m in Sources */,
+				EA8CE88E1A67937800984034 /* NineKeyboard.m in Sources */,
+				EA8CE89A1A67955D00984034 /* SymbolKeyboard.m in Sources */,
 				EA4E8EA91A5F7095007B479F /* KeyboardViewController.m in Sources */,
 				EA4E8EB31A5F77B0007B479F /* FullKeyboard.m in Sources */,
+				EA8CE8891A6788C900984034 /* KeyBtn.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,7 +456,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -436,7 +492,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

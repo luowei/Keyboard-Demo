@@ -7,6 +7,7 @@
 //
 
 #import "FullKeyboard.h"
+#import "KeyBtn.h"
 
 @implementation FullKeyboard
 

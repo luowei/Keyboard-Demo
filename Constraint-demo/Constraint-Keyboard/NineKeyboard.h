@@ -1,8 +1,8 @@
 //
-//  FullKeyboard.h
+//  NineKeyboard.h
 //  Constraint-demo
 //
-//  Created by luowei on 15/1/9.
+//  Created by luowei on 15/1/15.
 //  Copyright (c) 2015年 luowei. All rights reserved.
 //
 
@@ -10,12 +10,13 @@
 
 @class KeyBtn;
 
-@interface FullKeyboard : UIView
+@interface NineKeyboard : UIView
 
-@property (weak, nonatomic) IBOutlet KeyBtn *nextBtn;
-
-@property (weak, nonatomic) IBOutlet KeyBtn *numBtn;
-@property (weak, nonatomic) IBOutlet KeyBtn *languageBtn;
 @property (weak, nonatomic) IBOutlet KeyBtn *symbolBtn;
+@property (weak, nonatomic) IBOutlet KeyBtn *languageBtn;
+@property (weak, nonatomic) IBOutlet KeyBtn *nextBtn;
+@property (weak, nonatomic) IBOutlet KeyBtn *numBtn;
+
 
 @end
+	
