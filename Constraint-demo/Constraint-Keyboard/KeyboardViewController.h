@@ -12,8 +12,11 @@
 @class NumKeyboard;
 @class NineKeyboard;
 @class SymbolKeyboard;
+@class InputView;
 
 @interface KeyboardViewController : UIInputViewController
+
+@property(nonatomic, strong) InputView *inputView;
 
 @property(nonatomic, strong) UIView *currentKeyboard;
 

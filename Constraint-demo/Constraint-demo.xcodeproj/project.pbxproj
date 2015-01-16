@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA463FDF1A67BB810018D494 /* InputView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA463FDE1A67BB810018D494 /* InputView.m */; };
 		EA4E8E7C1A5F7073007B479F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4E8E7B1A5F7073007B479F /* main.m */; };
 		EA4E8E7F1A5F7073007B479F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4E8E7E1A5F7073007B479F /* AppDelegate.m */; };
 		EA4E8E821A5F7073007B479F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4E8E811A5F7073007B479F /* ViewController.m */; };
@@ -59,6 +60,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EA463FDD1A67BB810018D494 /* InputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputView.h; sourceTree = "<group>"; };
+		EA463FDE1A67BB810018D494 /* InputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputView.m; sourceTree = "<group>"; };
 		EA4E8E761A5F7073007B479F /* Constraint-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Constraint-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4E8E7A1A5F7073007B479F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA4E8E7B1A5F7073007B479F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -201,6 +204,8 @@
 		EA8CE88A1A67930C00984034 /* Keyboard */ = {
 			isa = PBXGroup;
 			children = (
+				EA463FDD1A67BB810018D494 /* InputView.h */,
+				EA463FDE1A67BB810018D494 /* InputView.m */,
 				EA4E8EB11A5F77B0007B479F /* FullKeyboard.h */,
 				EA4E8EB21A5F77B0007B479F /* FullKeyboard.m */,
 				EA8CE8961A67952200984034 /* FullKeyboard.xib */,
@@ -380,6 +385,7 @@
 			files = (
 				EA8CE8911A6793F000984034 /* NumKeyboard.m in Sources */,
 				EA8CE88E1A67937800984034 /* NineKeyboard.m in Sources */,
+				EA463FDF1A67BB810018D494 /* InputView.m in Sources */,
 				EA8CE89A1A67955D00984034 /* SymbolKeyboard.m in Sources */,
 				EA4E8EA91A5F7095007B479F /* KeyboardViewController.m in Sources */,
 				EA4E8EB31A5F77B0007B479F /* FullKeyboard.m in Sources */,

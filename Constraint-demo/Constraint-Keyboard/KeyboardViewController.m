@@ -12,6 +12,7 @@
 #import "NumKeyboard.h"
 #import "NineKeyboard.h"
 #import "SymbolKeyboard.h"
+#import "InputView.h"
 
 @interface KeyboardViewController ()
 @end
@@ -27,12 +28,27 @@
 - (void)loadView {
     [super loadView];
 
-    self.view.backgroundColor = [UIColor greenColor];
+    self.inputView = [InputView new];
+    self.view = self.inputView;
 
     self.fullKeyboard = [self loadFullKeyboard];
     self.currentKeyboard = self.fullKeyboard;
 
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    [self.view addConstraint:[NSLayoutConstraint
+            constraintWithItem:self.view
+                     attribute:NSLayoutAttributeHeight
+                     relatedBy:NSLayoutRelationEqual
+                        toItem:nil
+                     attribute:NSLayoutAttributeNotAnAttribute
+                    multiplier:0.6
+                      constant:160]];
+}
+
 
 - (FullKeyboard *)loadFullKeyboard {
     if (!_fullKeyboard) {
