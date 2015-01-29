@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Keyboard.h"
 
 @class KeyBtn;
 
-@interface NumKeyboard : UIView
+@interface NumKeyboard : Keyboard
 
 @property (weak, nonatomic) IBOutlet KeyBtn *symbolBtn;
 @property (weak, nonatomic) IBOutlet KeyBtn *backBtn;

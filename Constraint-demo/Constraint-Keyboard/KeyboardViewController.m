@@ -45,7 +45,7 @@
                      relatedBy:NSLayoutRelationEqual
                         toItem:nil
                      attribute:NSLayoutAttributeNotAnAttribute
-                    multiplier:0.6
+                    multiplier:1
                       constant:160]];
 }
 

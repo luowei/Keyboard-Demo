@@ -12,8 +12,14 @@
 @class NumKeyboard;
 @class NineKeyboard;
 @class SymbolKeyboard;
+@class KeyboardBackground;
+@class InputView;
 
 @interface KeyboardViewController : UIInputViewController
+
+@property(nonatomic, strong) InputView *inputView;
+@property(nonatomic, strong) KeyboardBackground *backgroundView;
+
 
 @property(nonatomic, strong) UIView *currentKeyboard;
 
@@ -24,5 +30,9 @@
 
 @property(nonatomic, strong) NSArray *keyboardVerticalConstraints;
 @property(nonatomic, strong) NSArray *keyboardHorizonConstraints;
+
+
+@property(nonatomic) BOOL singleHand;
+
 
 @end

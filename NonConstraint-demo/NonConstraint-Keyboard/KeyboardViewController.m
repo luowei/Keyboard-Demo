@@ -12,8 +12,12 @@
 #import "NumKeyboard.h"
 #import "NineKeyboard.h"
 #import "SymbolKeyboard.h"
+#import "KeyboardBackground.h"
+#import "InputView.h"
+#import "Define.h"
 
 @interface KeyboardViewController ()
+@property(nonatomic, strong) NSLayoutConstraint *inputViewHeightConstraint;
 @end
 
 @implementation KeyboardViewController
@@ -26,23 +30,85 @@
 
 - (void)loadView {
     [super loadView];
+    self.inputView = [[InputView alloc] initWithFrame:CGRectZero];
+    self.inputView.backgroundColor = [UIColor greenColor];
 
-    self.view.backgroundColor = [UIColor greenColor];
+    self.backgroundView = [[KeyboardBackground alloc] initWithFrame:CGRectZero];
+    self.backgroundView.backgroundColor = [UIColor yellowColor];
+    [self.inputView addSubview:self.backgroundView];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+//    这个view 不显示，主要是用来修改inputview 高度
+    UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
+    view.hidden = YES;
+    [self.inputView addSubview:view];
+    view.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.inputView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[view]|"
+                                                                           options:0
+                                                                           metrics:nil
+                                                                             views:@{@"view":view}]];
+    [self.inputView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|"
+                                                                           options:0
+                                                                           metrics:nil
+                                                                             views:@{@"view":view}]];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+
+    [self updateInputViewConstraints];
+
+    [self updateBackgroundView];
 
     self.fullKeyboard = [self loadFullKeyboard];
     self.currentKeyboard = self.fullKeyboard;
+}
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    [self updateBackgroundView];
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated
+}
+
+- (void)updateInputViewConstraints {
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    CGFloat inputHeight = (CGFloat) (screenSize.width > screenSize.height ? INPUT_LANDSCAPE_HEIGHT : INPUT_HEIGHT);
+    self.inputViewHeightConstraint = [NSLayoutConstraint constraintWithItem:self.inputView
+                                                                  attribute:NSLayoutAttributeHeight
+                                                                  relatedBy:NSLayoutRelationEqual
+                                                                     toItem:nil
+                                                                  attribute:NSLayoutAttributeNotAnAttribute
+                                                                 multiplier:1
+                                                                   constant:inputHeight];
+    [self.inputView addConstraint:self.inputViewHeightConstraint];
+}
+
+- (void)updateBackgroundView {
+    CGRect frame = self.inputView.frame;
+    if (self.singleHand) {
+        frame = CGRectMake(self.inputView.bounds.origin.x, self.inputView.bounds.origin.y, SINGLEHAND_WIDTH, self.inputView.bounds.size.height);
+    }
+    self.backgroundView.frame = frame;
 }
 
 - (FullKeyboard *)loadFullKeyboard {
     if (!_fullKeyboard) {
-        self.fullKeyboard = [[NSBundle mainBundle] loadNibNamed:@"FullKeyboard" owner:self.view options:nil][0];
-        [self.view addSubview:self.fullKeyboard];
+        self.fullKeyboard = [[NSBundle mainBundle] loadNibNamed:@"RCFullKeyboard6" owner:self.view options:nil][0];
+        [self.backgroundView addSubview:self.fullKeyboard];
 
         [self.fullKeyboard.nextBtn addTarget:self action:@selector(advanceToNextInputMode) forControlEvents:UIControlEventTouchUpInside];
         [self.fullKeyboard.numBtn addTarget:self action:@selector(goToNumKeyboard) forControlEvents:UIControlEventTouchUpInside];
         [self.fullKeyboard.symbolBtn addTarget:self action:@selector(goToSymbolKeyboard) forControlEvents:UIControlEventTouchUpInside];
         [self.fullKeyboard.languageBtn addTarget:self action:@selector(goToNineKeyboard) forControlEvents:UIControlEventTouchUpInside];
+        [self.fullKeyboard.delBtn addTarget:self action:@selector(changeKeyboardWidth) forControlEvents:UIControlEventTouchUpInside];
     }
 
     self.fullKeyboard.hidden = NO;
@@ -54,7 +120,7 @@
 - (NumKeyboard *)loadNumKeyboard {
     if (!_numKeyboard) {
         self.numKeyboard = [[NSBundle mainBundle] loadNibNamed:@"NumKeyboard" owner:self.view options:nil][0];
-        [self.view addSubview:self.numKeyboard];
+        [self.backgroundView addSubview:self.numKeyboard];
 
         [self.numKeyboard.backBtn addTarget:self action:@selector(backToPreKeyboard) forControlEvents:UIControlEventTouchUpInside];
         [self.numKeyboard.symbolBtn addTarget:self action:@selector(goToSymbolKeyboard) forControlEvents:UIControlEventTouchUpInside];
@@ -67,7 +133,7 @@
 - (NineKeyboard *)loadNineKeyboard {
     if (!_nineKeyboard) {
         self.nineKeyboard = [[NSBundle mainBundle] loadNibNamed:@"NineKeyboard" owner:self.view options:nil][0];
-        [self.view addSubview:self.nineKeyboard];
+        [self.backgroundView addSubview:self.nineKeyboard];
 
         [self.nineKeyboard.nextBtn addTarget:self action:@selector(advanceToNextInputMode) forControlEvents:UIControlEventTouchUpInside];
         [self.nineKeyboard.numBtn addTarget:self action:@selector(goToNumKeyboard) forControlEvents:UIControlEventTouchUpInside];
@@ -82,7 +148,7 @@
 - (SymbolKeyboard *)loadSymbolKeyboard {
     if (!_symbolKeyboard) {
         self.symbolKeyboard = [[NSBundle mainBundle] loadNibNamed:@"SymbolKeyboard" owner:self.view options:nil][0];
-        [self.view addSubview:self.symbolKeyboard];
+        [self.backgroundView addSubview:self.symbolKeyboard];
 
         [self.symbolKeyboard.nextBtn addTarget:self action:@selector(advanceToNextInputMode) forControlEvents:UIControlEventTouchUpInside];
         [self.symbolKeyboard.languageBtn addTarget:self action:@selector(goToNineKeyboard) forControlEvents:UIControlEventTouchUpInside];
@@ -93,16 +159,6 @@
     return _symbolKeyboard;
 }
 
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated
-}
 
 - (void)textWillChange:(id <UITextInput>)textInput {
     // The app is about to change the document's contents. Perform any preparation here.
@@ -138,6 +194,12 @@
 - (void)backToPreKeyboard {
     self.currentKeyboard.hidden = YES;
     [self loadFullKeyboard];
+}
+
+
+- (void)changeKeyboardWidth {
+    self.singleHand = !self.singleHand;
+    [self updateBackgroundView];
 }
 
 @end

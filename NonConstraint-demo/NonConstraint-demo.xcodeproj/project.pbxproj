@@ -25,6 +25,10 @@
 		EA4E8E651A5F7041007B479F /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4E8E641A5F7041007B479F /* KeyboardViewController.m */; };
 		EA4E8E681A5F7041007B479F /* NonConstraint-Keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EA4E8E5F1A5F7041007B479F /* NonConstraint-Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EA4E8EB61A5F77E7007B479F /* FullKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4E8EB51A5F77E7007B479F /* FullKeyboard.m */; };
+		EA551C7F1A79C89C003C8F21 /* RCFullKeyboard6.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA551C7B1A79C89C003C8F21 /* RCFullKeyboard6.xib */; };
+		EA551C861A7A0F87003C8F21 /* InputView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA551C851A7A0F87003C8F21 /* InputView.m */; };
+		EA551C891A7A0FAA003C8F21 /* KeyboardBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = EA551C881A7A0FAA003C8F21 /* KeyboardBackground.m */; };
+		EA551C8C1A7A1228003C8F21 /* Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = EA551C8B1A7A1228003C8F21 /* Keyboard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +94,14 @@
 		EA4E8E641A5F7041007B479F /* KeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
 		EA4E8EB41A5F77E7007B479F /* FullKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullKeyboard.h; sourceTree = "<group>"; };
 		EA4E8EB51A5F77E7007B479F /* FullKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullKeyboard.m; sourceTree = "<group>"; };
+		EA551C7B1A79C89C003C8F21 /* RCFullKeyboard6.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RCFullKeyboard6.xib; sourceTree = "<group>"; };
+		EA551C841A7A0F87003C8F21 /* InputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputView.h; sourceTree = "<group>"; };
+		EA551C851A7A0F87003C8F21 /* InputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputView.m; sourceTree = "<group>"; };
+		EA551C871A7A0FAA003C8F21 /* KeyboardBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyboardBackground.h; sourceTree = "<group>"; };
+		EA551C881A7A0FAA003C8F21 /* KeyboardBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyboardBackground.m; sourceTree = "<group>"; };
+		EA551C8A1A7A1228003C8F21 /* Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keyboard.h; sourceTree = "<group>"; };
+		EA551C8B1A7A1228003C8F21 /* Keyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Keyboard.m; sourceTree = "<group>"; };
+		EA551C8D1A7A1503003C8F21 /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +132,11 @@
 		EA463FDB1A67B4BB0018D494 /* Keyboard */ = {
 			isa = PBXGroup;
 			children = (
+				EA551C831A7A0F67003C8F21 /* Base */,
 				EA4E8EB41A5F77E7007B479F /* FullKeyboard.h */,
 				EA4E8EB51A5F77E7007B479F /* FullKeyboard.m */,
 				EA463FC71A67B3F10018D494 /* FullKeyboard.xib */,
+				EA551C7B1A79C89C003C8F21 /* RCFullKeyboard6.xib */,
 				EA463FCA1A67B3F10018D494 /* NineKeyboard.h */,
 				EA463FCB1A67B3F10018D494 /* NineKeyboard.m */,
 				EA463FCC1A67B3F10018D494 /* NineKeyboard.xib */,
@@ -214,6 +228,7 @@
 				EA4E8E631A5F7041007B479F /* KeyboardViewController.h */,
 				EA4E8E641A5F7041007B479F /* KeyboardViewController.m */,
 				EA4E8E611A5F7041007B479F /* Supporting Files */,
+				EA551C8D1A7A1503003C8F21 /* Define.h */,
 			);
 			path = "NonConstraint-Keyboard";
 			sourceTree = "<group>";
@@ -224,6 +239,19 @@
 				EA4E8E621A5F7041007B479F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA551C831A7A0F67003C8F21 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				EA551C841A7A0F87003C8F21 /* InputView.h */,
+				EA551C851A7A0F87003C8F21 /* InputView.m */,
+				EA551C871A7A0FAA003C8F21 /* KeyboardBackground.h */,
+				EA551C881A7A0FAA003C8F21 /* KeyboardBackground.m */,
+				EA551C8A1A7A1228003C8F21 /* Keyboard.h */,
+				EA551C8B1A7A1228003C8F21 /* Keyboard.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +378,7 @@
 				EA463FD61A67B3F10018D494 /* NineKeyboard.xib in Resources */,
 				EA463FDA1A67B3F10018D494 /* SymbolKeyboard.xib in Resources */,
 				EA463FD31A67B3F10018D494 /* FullKeyboard.xib in Resources */,
+				EA551C7F1A79C89C003C8F21 /* RCFullKeyboard6.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,9 +407,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA551C891A7A0FAA003C8F21 /* KeyboardBackground.m in Sources */,
 				EA463FD71A67B3F10018D494 /* NumKeyboard.m in Sources */,
 				EA463FD51A67B3F10018D494 /* NineKeyboard.m in Sources */,
+				EA551C861A7A0F87003C8F21 /* InputView.m in Sources */,
 				EA463FD91A67B3F10018D494 /* SymbolKeyboard.m in Sources */,
+				EA551C8C1A7A1228003C8F21 /* Keyboard.m in Sources */,
 				EA4E8E651A5F7041007B479F /* KeyboardViewController.m in Sources */,
 				EA4E8EB61A5F77E7007B479F /* FullKeyboard.m in Sources */,
 				EA463FD41A67B3F10018D494 /* KeyBtn.m in Sources */,

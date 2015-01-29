@@ -7,15 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Keyboard.h"
 
 @class KeyBtn;
 
-@interface FullKeyboard : UIView
+@interface FullKeyboard : Keyboard
 
 @property (weak, nonatomic) IBOutlet KeyBtn *nextBtn;
 
 @property (weak, nonatomic) IBOutlet KeyBtn *numBtn;
 @property (weak, nonatomic) IBOutlet KeyBtn *languageBtn;
 @property (weak, nonatomic) IBOutlet KeyBtn *symbolBtn;
+
+@property (weak, nonatomic) IBOutlet KeyBtn *delBtn;
 
 @end
