@@ -36,39 +36,43 @@
     self.backgroundView = [[KeyboardBackground alloc] initWithFrame:CGRectZero];
     self.backgroundView.backgroundColor = [UIColor yellowColor];
     [self.inputView addSubview:self.backgroundView];
+
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    这个view 不显示，主要是用来修改inputview 高度
-    UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
-    view.hidden = YES;
-    [self.inputView addSubview:view];
-    view.translatesAutoresizingMaskIntoConstraints = NO;
-    [self.inputView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[view]|"
-                                                                           options:0
-                                                                           metrics:nil
-                                                                             views:@{@"view":view}]];
-    [self.inputView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|"
-                                                                           options:0
-                                                                           metrics:nil
-                                                                             views:@{@"view":view}]];
+    //添加inputView的遮罩层
+    [self addInputCover];
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-
     [self updateInputViewConstraints];
 
+    //更新backgroundView
     [self updateBackgroundView];
 
     self.fullKeyboard = [self loadFullKeyboard];
     self.currentKeyboard = self.fullKeyboard;
 }
 
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+//    [self updateInputViewConstraints];
+//    [self updateBackgroundView];
+}
+
+
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     [super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+    [self updateInputViewConstraints];
     [self updateBackgroundView];
 }
 
@@ -78,9 +82,28 @@
     // Dispose of any resources that can be recreated
 }
 
+
+- (void)addInputCover {
+    //这个view不显示，用来修改inputview 高度
+    UIView *view = [[UIView alloc] initWithFrame:CGRectZero];
+    view.hidden = YES;
+    [self.inputView addSubview:view];
+    view.translatesAutoresizingMaskIntoConstraints = NO;
+    [self.inputView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|[view]|"
+                                                                           options:0
+                                                                           metrics:nil
+                                                                             views:@{@"view" : view}]];
+    [self.inputView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|"
+                                                                           options:0
+                                                                           metrics:nil
+                                                                             views:@{@"view" : view}]];
+}
+
 - (void)updateInputViewConstraints {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     CGFloat inputHeight = (CGFloat) (screenSize.width > screenSize.height ? INPUT_LANDSCAPE_HEIGHT : INPUT_HEIGHT);
+
+    [self.inputView removeConstraint:self.inputViewHeightConstraint];
     self.inputViewHeightConstraint = [NSLayoutConstraint constraintWithItem:self.inputView
                                                                   attribute:NSLayoutAttributeHeight
                                                                   relatedBy:NSLayoutRelationEqual
@@ -89,12 +112,16 @@
                                                                  multiplier:1
                                                                    constant:inputHeight];
     [self.inputView addConstraint:self.inputViewHeightConstraint];
+    [self.inputView updateConstraints];
 }
 
 - (void)updateBackgroundView {
-    CGRect frame = self.inputView.frame;
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    CGFloat inputHeight = (CGFloat) (screenSize.width > screenSize.height ? INPUT_LANDSCAPE_HEIGHT : INPUT_HEIGHT);
+
+    CGRect frame = CGRectMake(0, 0, screenSize.width, inputHeight);
     if (self.singleHand) {
-        frame = CGRectMake(self.inputView.bounds.origin.x, self.inputView.bounds.origin.y, SINGLEHAND_WIDTH, self.inputView.bounds.size.height);
+        frame = CGRectMake(0, 0, SINGLEHAND_WIDTH, inputHeight);
     }
     self.backgroundView.frame = frame;
 }

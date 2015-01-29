@@ -29,6 +29,7 @@
 		EA551C861A7A0F87003C8F21 /* InputView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA551C851A7A0F87003C8F21 /* InputView.m */; };
 		EA551C891A7A0FAA003C8F21 /* KeyboardBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = EA551C881A7A0FAA003C8F21 /* KeyboardBackground.m */; };
 		EA551C8C1A7A1228003C8F21 /* Keyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = EA551C8B1A7A1228003C8F21 /* Keyboard.m */; };
+		EA551C901A7A29BF003C8F21 /* SingleHandView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA551C8F1A7A29BF003C8F21 /* SingleHandView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,8 @@
 		EA551C8A1A7A1228003C8F21 /* Keyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Keyboard.h; sourceTree = "<group>"; };
 		EA551C8B1A7A1228003C8F21 /* Keyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Keyboard.m; sourceTree = "<group>"; };
 		EA551C8D1A7A1503003C8F21 /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		EA551C8E1A7A29BF003C8F21 /* SingleHandView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleHandView.h; sourceTree = "<group>"; };
+		EA551C8F1A7A29BF003C8F21 /* SingleHandView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleHandView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +253,8 @@
 				EA551C881A7A0FAA003C8F21 /* KeyboardBackground.m */,
 				EA551C8A1A7A1228003C8F21 /* Keyboard.h */,
 				EA551C8B1A7A1228003C8F21 /* Keyboard.m */,
+				EA551C8E1A7A29BF003C8F21 /* SingleHandView.h */,
+				EA551C8F1A7A29BF003C8F21 /* SingleHandView.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -408,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA551C891A7A0FAA003C8F21 /* KeyboardBackground.m in Sources */,
+				EA551C901A7A29BF003C8F21 /* SingleHandView.m in Sources */,
 				EA463FD71A67B3F10018D494 /* NumKeyboard.m in Sources */,
 				EA463FD51A67B3F10018D494 /* NineKeyboard.m in Sources */,
 				EA551C861A7A0F87003C8F21 /* InputView.m in Sources */,
