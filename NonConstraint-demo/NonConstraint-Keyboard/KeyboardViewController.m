@@ -103,6 +103,8 @@
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     CGFloat inputHeight = (CGFloat) (screenSize.width > screenSize.height ? INPUT_LANDSCAPE_HEIGHT : INPUT_HEIGHT);
 
+    //设置inputView为全屏显示
+//    CGFloat inputHeight = screenSize.height;
     [self.inputView removeConstraint:self.inputViewHeightConstraint];
     self.inputViewHeightConstraint = [NSLayoutConstraint constraintWithItem:self.inputView
                                                                   attribute:NSLayoutAttributeHeight
